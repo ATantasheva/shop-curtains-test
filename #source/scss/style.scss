@@ -1,0 +1,437 @@
+//<МИКСИНЫ>===============================================================================================
+@mixin anim($time, $delay) {
+   -webkit-transition: all $time ease $delay;
+   -moz-transition: all $time ease $delay;
+   -ms-transition: all $time ease $delay;
+   -o-transition: all $time ease $delay;
+   transition: all $time ease $delay;
+}
+
+@mixin anim_cubic($time, $delay) {
+   -webkit-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+   -moz-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+   -ms-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+   -o-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+   transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+}
+
+@mixin rotate($deg) {
+   -moz-transform: rotate($deg);
+   -ms-transform: rotate($deg);
+   -webkit-transform: rotate($deg);
+   -o-transform: rotate($deg);
+   transform: rotate($deg);
+}
+
+@mixin scale($num) {
+   -moz-transform: scale($num);
+   -ms-transform: scale($num);
+   -webkit-transform: scale($num);
+   -o-transform: scale($num);
+   transform: scale($num);
+}
+
+@mixin skew($num) {
+   -webkit-transform: skewX($num);
+   -moz-transform: skewX($num);
+   -ms-transform: skewX($num);
+   -o-transform: skewX($num);
+   transform: skewX($num);
+}
+
+@mixin cnt($h) {
+   display: flex;
+   flex-direction: column;
+   height: $h;
+   text-align: center;
+   align-items: stretch;
+   justify-content: center;
+}
+
+@mixin tr($x, $y, $z) {
+   transform: translate3d($x, $y, $z);
+}
+
+;
+
+@mixin flexbox() {
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   font-size: 0;
+}
+
+@mixin flexorder($val) {
+   -webkit-box-ordinal-group: $val;
+   -moz-box-ordinal-group: $val;
+   -ms-flex-order: $val;
+   -webkit-order: $val;
+   order: $val;
+}
+
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+//для кириллицы нужно добавить в конец подключенного шрифта
+//&display=swap&subset=cyrillic-ext
+
+//<Подключаем шрифты>=======================================================================================
+//для подкл через vscode - курсор сюда - cmd+shift+p => google fonts => наз шрифта
+
+//поставить кавычки в скобки - вид:
+//@import url("   ")
+  @import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;1,400;1,700&display=swap&subset=cyrillic-ext");
+
+  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;1,400;1,600;1,700&display=swap&subset=cyrillic-ext");
+
+  @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&display=swap&subset=cyrillic-ext");
+  //</Подключаем шрифты>=======================================================================================
+//прописываем на кажд вид шрифта такую штуку
+/* @font-face {
+	font-family: 'Uni Sans Heavy CAPS';
+	src: url('../fonts/Gilroy-Semibold.eot');
+	src: local('☺'), url('../fonts/Gilroy-Semibold.woff') format('woff'), url('../fonts/Gilroy-Semibold.ttf') format('truetype'), url('../fonts/Gilroy-Semibold.svg') format('svg');
+	font-weight: 600;
+   font-style: normal;
+}
+*/ 
+
+//<Шрифт по умолчанию>==========================================================================================
+ $fontfamily: 'PT Sans', sans-serif;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>==============================================================================================================
+
+
+//<ПЕРЕМЕННЫЕ>=====СЕТКА АДАПТИВА ======================================================================================================
+$minwidth: 320px;
+$mwidth: 1440px; //ширина всего полотна макета от дизайнера
+$mw: 1120; //ширина контейнера ВСЕГДА!! на основании нее остальные брейкпойнты
+$md1: $mw+12;
+$md2: 992.98; //планшет
+$md3: 767.98; //бол смартфон
+$md4: 379.98; //мал смартфон
+
+//</ПЕРЕМЕННЫЕ>==============================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//подкл обнуляющий файл
+@import "null"; 
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+   width: 100%;
+   min-height: 100%;
+   overflow: hidden;
+
+   &.loaded {}
+}
+
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+   max-width: $mw+px;
+   margin: 0 auto;
+   width: 100%;
+/*
+   @media (max-width:$md1+px) {
+      max-width: 970px;
+   }
+   @media (max-width:$md2+px) {
+      max-width: 380px;
+   }
+   @media (max-width:$md3+px) {
+      max-width: none;
+      padding: 0 10px;
+   } */
+   @media (max-width:$md4+px) {
+      max-width: 380px;
+   }
+} 
+.container__main-page {
+   max-width: $mwidth;
+   margin: 0 auto;
+   width: 100%;
+   display: flex;
+ 
+}
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+@import "baguetteBox.scss";
+@import "popover.min.scss";
+@import "popup.scss";
+@import "header.scss";
+@import "footer.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+//блок главная страница + header
+
+.main-page {
+
+   &__content {
+  
+   }
+&__header {
+   flex: 0 1 5%;
+}
+   &__body {
+      flex: 1 1 95%;
+      background: url('/img/main/slider-main0.jpg') 0 0 no-repeat;
+   }
+   &__top {
+      height: 150px;
+      display: flex;
+      align-items: center;
+    justify-content: flex-end;
+      .main-cart {
+         margin: 0px 0px 0px 17px;
+      }
+   }
+}
+.btn {
+   font-style: normal;
+font-weight: 400;
+color: #052E4C;
+font-size: 13px;
+line-height: 17px;
+text-transform: uppercase;
+background: #fff;
+padding: 8px 24px;
+display: inline-block;
+transition: all 0.3s ease 0s;
+   &__call{
+      background: #B84C74;
+      color: #fff;
+      border: 2px solid #B84C74;
+      &:hover {
+         background: #fff;
+         color:#B84C74;
+      }
+   }
+
+   &__calc {
+      &:hover {
+         background: #B84C74;
+         color: #fff;
+        // border: 2px solid #B84C74;
+      }
+   }
+}
+
+h1 {
+font-family: 'Cormorant Infant';
+font-style: italic;
+font-weight: 300;
+font-size: 78px;
+line-height: 100%;
+text-transform: uppercase;
+color: #052E4C;
+margin: 0px 0px 24px 0px;
+span {
+   font-weight: 600;
+   font-style: italic;
+}
+}
+.main {
+
+   &__text {
+      font-size: 16px;
+line-height: 21px;
+color: #052E4C;
+margin: 0px 0px 48px 0px;
+max-width: 477px;
+   }
+}
+
+//===================================================================================================================
+// блок ПОПУЛЯРНОЕ
+
+.popular {
+
+   &__block {
+      flex: 1 1 95%;
+      padding: 145px 0px 0px 0px;
+   }
+
+   &__content {
+     
+   }
+
+   &__items {
+      display: grid;
+      grid-template: 1fr 1fr / 1fr 1fr;
+   }
+
+   &__item {
+   }
+
+   &__item-title {
+   }
+}
+.container {
+
+   &__main-page {
+      max-width: $mwidth;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      &_popular {
+         background: #417A82;
+      }
+   }
+}
+.white {
+flex: 0 0 5%;
+
+   &__block {
+     background: #fff;
+     
+   }
+   &__round {
+      width: 30px;
+      height: 30px;
+     margin: 0px 21.5px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+   }
+}
+.title {
+
+   &__block {
+      text-align: right;
+   }
+}
+.blue {
+   background: #052E4C;
+   height: 100%;
+   &__round {
+      width: 160px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #052E4C;;
+      background: #052E4C;
+   }
+   &__block {
+      background: #052E4C;
+   }
+}
+h2 {
+   font-family: 'Cormorant';
+font-style: italic;
+font-weight: 400;
+font-size: 300px;
+line-height: 56px;
+letter-spacing: -0.03em;
+color: #FFFFFF;
+opacity: 0.05;
+}
+
+
+
+
+
+
+.block {
+
+   // .block__tabs
+   &__tabs {}
+
+   // .block__nav
+   &__nav {}
+
+   // .block__navitem
+   &__navitem {
+      cursor: pointer;
+
+      &.active {
+         color: red;
+      }
+   }
+
+   // .block__items
+   &__items {}
+
+   // .block__item
+   &__item {}
+}
+
+
+.spollers {
+
+   // .spollers__item
+   &__item {}
+
+   // .spollers__title
+   &__title {
+      cursor: pointer;
+
+      &.active {
+         color: green;
+      }
+   }
+
+   // .spollers__text
+   &__text {
+      display: none;
+      padding: 10px 0px 0px 0px;
+   }
+}
+
+.block {
+
+   // .block__form
+   &__form {}
+}
+
+.form-block {
+
+   // .form-block__item
+   &__item {
+      margin: 0px 0px 20px 0px;
+   }
+}
+
+.block {
+
+   // .block__gallery
+   &__gallery {}
+}
+
+.gallery-block {
+
+   // .gallery-block__item
+   &__item {
+      display: inline-block;
+      width: 100px;
+
+      img {
+         max-width: 100%;
+      }
+   }
+}
+
+.block__map {
+   height: 500px;
+}
+
+.sector {
+   height: 700px;
+}
+
+//===================================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms.scss"; //кнопки чекбоксы поля 
+@import "ui.scss"; // сборка одинаковых классов вписываем сюда!
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>===================================================================================================
