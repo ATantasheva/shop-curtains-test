@@ -1,0 +1,5 @@
+смена цвета иконок навигации через currentColor
+вносила currentColor в сам svg в strock и fill
+
+слайдер делаем с помощью slick jquery
+jquery подключила cdn

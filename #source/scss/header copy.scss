@@ -1,0 +1,286 @@
+$md4: 379.98; //мал смартфон
+.header {
+   background: #F2F6F7;
+   padding: 36px 0px 0px 0px;
+   @media (max-width:$md4+px) {
+      background-color: #fff;
+   }
+   &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+   }
+
+   &__call {
+   }
+
+   &__menu {
+      text-align: center;
+   }
+
+   &__list {
+      padding: 0px 24px 0px 24px;
+   }
+
+   &__item {
+      margin: 0px 0px 16px 0px;
+   }
+  
+   &__link {
+      text-align: center;
+  color: #417A82;
+  &:hover {
+   color: #B84C74;
+  }
+   }
+
+   &__search {
+      margin: 140px 0px 25px 0px;
+      transition: all 0.6s ease 0s;
+   }
+   &__search.active {
+      opacity: 0;
+   }
+}
+.header-body {
+
+}
+.logo {
+   text-align: center;
+   margin: 0px 0px 118px 0px;
+   @media (max-width:$md4+px) {
+      margin: 0px 0px 0px 0px;
+      display: none;
+   }
+}
+.menu {
+margin: 46px 0px 0px 0px;
+   &__icon {
+   }
+}
+.icon-menu {
+   display: block;
+		position: absolute;
+		top: 72px;
+		left: 24px;
+		width:24px;
+		height: 12px;
+		cursor: pointer;
+		z-index: 5;
+		span {
+         @include anim(0.3s,0s);
+         top: 6px;
+         left: 0px;
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         background-color: #417A82;
+			&:first-child {
+            top: 0px;
+         }
+			&:last-child {
+            top: 12px;
+            bottom: 0px;
+         }
+		}
+      @media (max-width:$md4+px) {
+         top: 0px;
+   left: 20px;
+      }
+		&.active{
+			span {
+            @include scale(0);
+				&:first-child {
+               @include rotate(-45deg);
+               top: 12px;
+            }
+				&:last-child {
+               @include rotate(45deg);
+               bottom: 8px;
+            }
+			}
+		}
+}
+//лого на моб
+.logo-mob {
+   margin: 0px 0px 20px 0px;
+
+   @media (min-width:$md4+px) {
+      display: none;
+   }
+}
+//корзина на моб
+.cart-header {
+   position: absolute;
+   right: 20px;
+   @media (min-width:$md4+px) {
+      display: none;
+   }
+}
+.mobail-menu {
+   @media (max-width:$md4+px) {
+      display: none;
+   }
+}
+
+.search-header {
+   cursor: pointer;
+
+}
+.mobail-logo {
+
+   &__body {
+   }
+}
+
+.menu {
+padding: 0px 0px 10px 0px;
+   &__mob {
+      position: absolute;
+      top: 45px;
+      left: -400%;
+      width: 280px;
+      height: 100%;
+      overflow: auto;
+      z-index: 4;
+      padding: 0px 10px 0px 10px;
+      background: #F2F6F7;
+      transition: all 0.6s ease 0s;
+      @media (max-width:$md4+px) {
+         background-color: #fff;
+      }
+      @media (max-width:$md4+px) {
+         position: fixed;
+         left: -100%;
+         width: 100%;
+         height: 100%;
+        margin-top: 30px;
+      }
+   }
+   //при актив
+   &__mob.active {
+      left:  100%;
+      @media (max-width:$md4+px) {
+         left: 0;
+      }
+   }
+}
+.header__list_pc {
+   transition: all 0.5s ease 0s;
+}
+
+.header__list_pc.active {
+  opacity: 0;
+   }
+.block {
+
+   &__city {
+      font-size: 13px;
+      line-height: 17px;
+      text-align: center;
+      color: #417A82;
+      margin: 20px 0px 24px 0px;
+   }
+}
+.city {
+   margin: 0px 0px 8px 0px;
+}
+.header {
+
+   &__call {
+      display: block;
+      text-transform: uppercase;
+      color: #417A82;
+      &:hover {
+         text-decoration: underline;
+      }
+      @media (max-width:$md4+px) {
+         font-size: 16px;
+      }
+   }
+
+   &__menu {
+   }
+
+   .menu__mob .header__list {
+      padding: 0px 0px 0px 0px;
+      margin: 0px 0px 64px 0px;
+   }
+
+   &__item {
+   
+   }
+
+   &__link {
+      display:flex;
+      align-items: center;
+     
+   }
+
+   &__link-text {
+      display: block;
+   text-align: left;
+   font-size: 13px;
+line-height: 17px;
+margin: 0px 0px 0px 16px;
+@media (max-width:$md4+px) {
+   font-size: 18px;
+}
+   }
+}
+.search-header {
+
+   &__mobile {
+      position: relative;
+      margin: 0px 0px 32px 0px;
+      input {
+         padding: 8px 40px 8px 35px;
+         border: 1px solid #417A82;
+border-radius: 20px;
+text-align: left;
+@media (max-width:$md4+px) {
+   padding: 8px 100px 8px 35px;
+}
+      }
+      svg {
+         position: absolute;
+      left: 24px;
+      top: 8px;
+      @media (max-width:$md4+px) {
+         left: 44px;
+      top: 12px;
+      }
+      }
+    
+   }
+}
+.info-header {
+  
+}
+.mobail-logo {
+
+   &__body {
+      text-align: left;
+      display: block;
+      color: #417A82;
+      margin: 0px 0px 8px 0px;
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+}
+::-webkit-input-placeholder {
+   font-size: 13px;
+   line-height: 17px;
+   color: #417A82;
+}
+::-moz-placeholder{font-size: 13px;
+   line-height: 17px;
+   color: #417A82;}/* Firefox 19+ */
+:-moz-placeholder {font-size: 13px;
+   line-height: 17px;
+   color: #417A82;}/* Firefox 18- */
+:-ms-input-placeholder {font-size: 13px;
+   line-height: 17px;
+   color: #417A82;}

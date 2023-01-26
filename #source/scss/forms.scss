@@ -62,8 +62,9 @@
 
 //<INPUT>====================================================================================================
 input[type=text],input[type=email],input[type=tel],textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
-.input{
-	border: 1px solid #000;
+/*.input{
+	background: #FFFFFF;
+border: 1px solid #417A82;
 	height: 50px;
 	border-radius: 0 !important;
 	margin: 0px 0px 20px 0px;
@@ -74,7 +75,7 @@ input[type=text],input[type=email],input[type=tel],textarea{-webkit-appearance:n
 	&.err{
 		border: 1px solid red;
 	}
-}
+} */
 textarea.input{
 	resize:none;
 	padding: 0px 0px;
