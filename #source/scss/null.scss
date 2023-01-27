@@ -53,7 +53,10 @@ body {
    -webkit-text-size-adjust: 100%;
 
    &.lock {
-      overflow: hidden;
+      @media (max-width:$md4+px) {
+         overflow: hidden;
+      }
+    
 
       @media (max-width:$md3+px) {
          width: 100%;

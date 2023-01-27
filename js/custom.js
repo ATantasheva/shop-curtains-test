@@ -41,7 +41,7 @@ waitForAnimate: true,
 responsive: [ //адаптив
    {
       breakpoint: 380,
-      setting: {
+      settings: {
          arrows: false,
          dots:true,
       }
@@ -92,10 +92,12 @@ responsive: [ //адаптив
    responsive: [ //адаптив
       {
          breakpoint: 379.98,
-         setting: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-             
+         settings: {
+            slidesToShow: 1.5,
+            slidesToScroll: 1,
+            //centerMode: true,
+   //variableWidth: true,  
+    infinite: false,
          }
       }
    ],

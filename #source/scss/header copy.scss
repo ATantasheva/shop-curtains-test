@@ -4,6 +4,12 @@ $md4: 379.98; //мал смартфон
    padding: 36px 0px 0px 0px;
    @media (max-width:$md4+px) {
       background-color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 3;
+      height: 82px;
    }
    &__content {
       display: flex;
@@ -230,25 +236,29 @@ margin: 0px 0px 0px 16px;
    }
 }
 .search-header {
-
+  
    &__mobile {
       position: relative;
       margin: 0px 0px 32px 0px;
       input {
-         padding: 8px 40px 8px 35px;
+         padding: 8px 10px 8px 35px;
          border: 1px solid #417A82;
 border-radius: 20px;
-text-align: left;
+display: block;
+max-width: 276px;
 @media (max-width:$md4+px) {
-   padding: 8px 100px 8px 35px;
+  // padding: 8px 100px 8px 35px;
 }
       }
       svg {
          position: absolute;
-      left: 24px;
+         width: 20px;
+         height: 20px;
+      left: 14px;
       top: 8px;
+      z-index: 2;
       @media (max-width:$md4+px) {
-         left: 44px;
+         left: 14px;
       top: 12px;
       }
       }
