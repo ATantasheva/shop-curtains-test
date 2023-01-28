@@ -141,4 +141,57 @@ responsive: [ //адаптив
                   $('body').removeClass('lock');
             }
          });
+   //========================================================================================================
+   //слайдер - блок УСЛУГИ
+   $(document).ready(function() {
+      //счетчик слайдов
+      var currentSlide;
+   var slidesCount;
+   var sliderCounter = document.createElement("div");
+   sliderCounter.classList.add("slider__counter");
    
+   var updateSliderCounter = function (slick, currentIndex) {
+     currentSlide = slick.slickCurrentSlide() + 1;
+     slidesCount = slick.slideCount;
+     $(sliderCounter).text(currentSlide + "/" + slidesCount);
+   };
+   
+   $(".slider3").on("init", function (event, slick) {
+     $(".slider3").append(sliderCounter);
+     updateSliderCounter(slick);
+   });
+   
+   $(".slider3").on("afterChange", function (event, slick, currentSlide) {
+     updateSliderCounter(slick, currentSlide);
+   });
+      $('.slider3').slick({
+         arrows: true,
+         //adaptiveHeight: true,
+         slidesToShow: 3,
+         slidesToScroll: 3,
+         speed: 1000,
+         easing: 'linear',
+         infinite: true,
+         autoplay: false,
+         autoplaySpeed: 3000,
+         pauseOnFocus: false,
+         pauseOnHover: false,
+         draggable: true,
+         swipe: true,
+   waitForAnimate: true,
+   //centerMode: true,
+   //variableWidth: true,
+   responsive: [ //адаптив
+      {
+         breakpoint: 379.98,
+         settings: {
+            slidesToShow: 1.5,
+            slidesToScroll: 1,
+            //centerMode: true,
+   //variableWidth: true,  
+    infinite: false,
+         }
+      }
+   ],
+      });
+      });
