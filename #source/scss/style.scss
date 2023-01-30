@@ -1836,17 +1836,17 @@ right: 100px;
 
       li:first-child::before {
          content: '';
-         background: url('/img/icons/main/stocs-icon01.svg') 0 0 no-repeat;
+         background: url('../img/icons/main/stocs-icon01.svg') 0 0 no-repeat;
          position: absolute;
          width: 26px;
-         height: 26px;
+         height: 28px;
          top: 0;
          left: 0;
       }
 
       li:last-child::before {
          content: '';
-         background: url('/img/icons/main/stocs-icon02.svg') 0 0 no-repeat;
+         background: url('../img/icons/main/stocs-icon02.svg') 0 0 no-repeat;
          position: absolute;
          width: 28px;
          height: 26px;

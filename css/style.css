@@ -1020,8 +1020,8 @@ h6 {
 }
 .menu__mob {
   position: absolute;
-  top: 45px;
-  left: -400%;
+  top: 48px;
+  left: -1400%;
   width: 280px;
   height: 100%;
   overflow: auto;
@@ -3133,16 +3133,16 @@ h3 {
 }
 .stocks__info-list li:first-child::before {
   content: "";
-  background: url("/img/icons/main/stocs-icon01.svg") 0 0 no-repeat;
+  background: url("../img/icons/main/stocs-icon01.svg") 0 0 no-repeat;
   position: absolute;
   width: 26px;
-  height: 26px;
+  height: 28px;
   top: 0;
   left: 0;
 }
 .stocks__info-list li:last-child::before {
   content: "";
-  background: url("/img/icons/main/stocs-icon02.svg") 0 0 no-repeat;
+  background: url("../img/icons/main/stocs-icon02.svg") 0 0 no-repeat;
   position: absolute;
   width: 28px;
   height: 26px;
