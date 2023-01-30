@@ -179,7 +179,9 @@ $md4: 379.98; //мал смартфон
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 //блок главная страница + header
-
+.main {
+  
+}
 .main-page {
 
    &__content {}
@@ -450,7 +452,6 @@ h1 {
 
 //===================================================================================================================
 // блок ПОПУЛЯРНОЕ
-.popular.container {}
 
 .popular {
 
@@ -582,6 +583,15 @@ h1 {
    }
 }
 
+.popular.element-animation {
+   opacity: 0;
+  transform: translateY(20px);
+}
+.popular.element-animation.element-show {
+   opacity: 1;
+   transition: all 1.5s;
+   transform: translateY(0%);
+ }
 .popular__block-bg {
    background: #417A82;
    padding: 145px 0px 0px 0px;
@@ -1210,7 +1220,15 @@ right: 100px;
       }
    }
 }
-
+.katalog.element-animation {
+   opacity: 0;
+  transform: translateY(20px);
+}
+.katalog.element-animation.element-show {
+   opacity: 1;
+   transition: all 1.5s;
+   transform: translateY(0%);
+ }
 .katalog .container {
    @media(max-width: $md4+px) {
       padding: 0px 0px 0px 0px;
@@ -1538,8 +1556,16 @@ right: 100px;
    @media(max-width: $md4+px) {
       padding: 0px 0px 0px 0px;
    }
-
 }
+.services__clients-commerce.element-animation {
+   opacity: 0;
+  transform: translateY(20px);
+}
+.services__clients-commerce.element-animation.element-show {
+   opacity: 1;
+   transition: all 1.5s;
+   transform: translateY(0%);
+ }
 
 .container {
 
