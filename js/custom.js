@@ -187,6 +187,7 @@ responsive: [ //адаптив
          settings: {
             slidesToShow: 1.5,
             slidesToScroll: 1,
+            
             //centerMode: true,
    //variableWidth: true,  
     infinite: false,
@@ -241,9 +242,11 @@ responsive: [ //адаптив
       settings: {
          slidesToShow: 1,
          slidesToScroll: 1,
+         arrows: false,
+         dots:true,
          //centerMode: true,
 //variableWidth: true,  
- infinite: false,
+ //infinite: false,
       }
    }
 ],
